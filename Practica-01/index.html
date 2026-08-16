@@ -3,30 +3,185 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Experiencias y ejercicios de la Práctica 01 de HTML5"
+  >
+
   <title>Práctica 01 - HTML5</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f5f8;
+      margin: 0;
+      color: #222;
+    }
+
+    header {
+      background-color: #164b75;
+      color: white;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    main {
+      max-width: 850px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .contenedor {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .tarjeta {
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+    }
+
+    .tarjeta h2 {
+      color: #164b75;
+      margin-top: 0;
+    }
+
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: 1px solid #999;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      background-color: #198754;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #12663f;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
 </head>
+
 <body>
+
   <header>
     <h1>Práctica N.° 01: HTML5</h1>
-    <p>Experiencias y ejercicios desarrollados.</p>
+    <p>Seleccione una experiencia o ejercicio</p>
   </header>
 
   <main>
-    <h2>Contenido</h2>
+    <div class="contenedor">
 
-    <ul>
-      <li>
-        <a href="Experiencias/index.html">Experiencias de práctica</a>
-      </li>
+      <section class="tarjeta">
+        <h2>Experiencias</h2>
 
-      <li>
-        <a href="Ejercicios/index.html">Ejercicios propuestos</a>
-      </li>
-    </ul>
+        <label for="experiencia">
+          Seleccione una experiencia:
+        </label>
+
+        <select id="experiencia">
+          <option value="">-- Seleccionar --</option>
+
+          <option value="Experiencias/Experiencia-01/index.html">
+            Experiencia 01: Elementos HTML
+          </option>
+
+          <option value="Experiencias/Experiencia-02/index.html">
+            Experiencia 02: Formularios
+          </option>
+
+          <option value="Experiencias/Experiencia-03/index.html">
+            Experiencia 03: Tablas
+          </option>
+
+          <option value="Experiencias/Experiencia-04/index.html">
+            Experiencia 04: Metadata
+          </option>
+        </select>
+
+        <button type="button" onclick="abrirExperiencia()">
+          Abrir experiencia
+        </button>
+      </section>
+
+      <section class="tarjeta">
+        <h2>Ejercicios</h2>
+
+        <label for="ejercicio">
+          Seleccione un ejercicio:
+        </label>
+
+        <select id="ejercicio">
+          <option value="">-- Seleccionar --</option>
+
+          <option value="Ejercicios/Ejercicio-01/index.html">
+            Ejercicio 01: Portafolio personal
+          </option>
+
+          <option value="Ejercicios/Ejercicio-02/index.html">
+            Ejercicio 02: Formulario de registro
+          </option>
+
+          <option value="Ejercicios/Ejercicio-03/index.html">
+            Ejercicio 03: Página de producto
+          </option>
+        </select>
+
+        <button type="button" onclick="abrirEjercicio()">
+          Abrir ejercicio
+        </button>
+      </section>
+
+    </div>
   </main>
 
-  <nav>
-    <a href="../index.html">Volver a prácticas</a>
-  </nav>
+  <footer>
+    <p>Juan Joshua Hincho Huillca - 2026</p>
+  </footer>
+
+  <script>
+    function abrirExperiencia() {
+      const ruta = document.getElementById("experiencia").value;
+
+      if (ruta === "") {
+        alert("Seleccione una experiencia.");
+        return;
+      }
+
+      window.location.href = ruta;
+    }
+
+    function abrirEjercicio() {
+      const ruta = document.getElementById("ejercicio").value;
+
+      if (ruta === "") {
+        alert("Seleccione un ejercicio.");
+        return;
+      }
+
+      window.location.href = ruta;
+    }
+  </script>
+
 </body>
 </html>
