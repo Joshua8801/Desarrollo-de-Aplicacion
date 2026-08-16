@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Formulario de registro</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <main>
+        <form action="#" method="post">
+            <h1>Crear una cuenta</h1>
+
+            <p class="indicacion">
+                Completa los siguientes campos para registrarte.
+            </p>
+
+            <fieldset>
+                <legend>Datos personales</legend>
+
+                <div class="campo">
+                    <label for="nombre">Nombre completo:</label>
+
+                    <input type="text"
+                           id="nombre"
+                           name="nombre"
+                           required
+                           minlength="3"
+                           maxlength="50"
+                           pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"
+                           title="Ingresa únicamente letras y espacios">
+
+                    <small>Utiliza únicamente letras y espacios.</small>
+                </div>
+
+                <div class="campo">
+                    <label for="correo">Correo electrónico:</label>
+
+                    <input type="email"
+                           id="correo"
+                           name="correo"
+                           required
+                           maxlength="80"
+                           placeholder="ejemplo@correo.com">
+
+                    <small>Ingresa una dirección de correo válida.</small>
+                </div>
+
+                <div class="campo">
+                    <label for="telefono">Número de teléfono:</label>
+
+                    <input type="tel"
+                           id="telefono"
+                           name="telefono"
+                           required
+                           pattern="[0-9]{9}"
+                           minlength="9"
+                           maxlength="9"
+                           placeholder="987654321"
+                           title="El teléfono debe contener 9 números">
+
+                    <small>Debe contener exactamente 9 números.</small>
+                </div>
+
+                <div class="campo">
+                    <label for="fecha">Fecha de nacimiento:</label>
+
+                    <input type="date"
+                           id="fecha"
+                           name="fecha"
+                           required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Datos de la cuenta</legend>
+
+                <div class="campo">
+                    <label for="usuario">Nombre de usuario:</label>
+
+                    <input type="text"
+                           id="usuario"
+                           name="usuario"
+                           required
+                           minlength="4"
+                           maxlength="15"
+                           pattern="[A-Za-z0-9_]+"
+                           title="Utiliza letras, números o guion bajo">
+
+                    <small>
+                        Entre 4 y 15 caracteres. Puedes usar letras, números
+                        y guion bajo.
+                    </small>
+                </div>
+
+                <div class="campo">
+                    <label for="contrasena">Contraseña:</label>
+
+                    <input type="password"
+                           id="contrasena"
+                           name="contrasena"
+                           required
+                           minlength="8"
+                           maxlength="20"
+                           pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,20}"
+                           title="Debe incluir una mayúscula, una minúscula y un número">
+
+                    <small>
+                        Entre 8 y 20 caracteres, con una mayúscula,
+                        una minúscula y un número.
+                    </small>
+                </div>
+            </fieldset>
+
+            <div class="terminos">
+                <input type="checkbox"
+                       id="terminos"
+                       name="terminos"
+                       required>
+
+                <label for="terminos">
+                    Acepto los términos y condiciones.
+                </label>
+            </div>
+
+            <button type="submit">Registrarme</button>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #263238;
+    background-color: #f2f5f8;
+    line-height: 1.6;
+}
+
+header {
+    padding: 25px 10%;
+    color: white;
+    background-color: #003a8c;
+}
+
+header h1,
+header p {
+    margin: 5px 0;
+}
+
+main {
+    max-width: 1050px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+section {
+    margin-bottom: 30px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.servicio {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.imagen img {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+}
+
+h2,
+h3 {
+    color: #003a8c;
+}
+
+.boton {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 18px;
+    border-radius: 5px;
+    color: white;
+    background-color: #0096f0;
+    text-decoration: none;
+}
+
+.boton:hover,
+.boton:focus {
+    background-color: #006db3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #b9c3cc;
+    text-align: left;
+}
+
+th {
+    width: 35%;
+    color: white;
+    background-color: #003a8c;
+}
+
+.beneficios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.beneficios h2 {
+    grid-column: 1 / -1;
+}
+
+.beneficios article {
+    padding: 15px;
+    border-left: 4px solid #0096f0;
+    background-color: #f2f5f8;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    background-color: #003a8c;
+}
+
+@media (max-width: 700px) {
+    .servicio,
+    .beneficios {
+        grid-template-columns: 1fr;
+    }
+}
